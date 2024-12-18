@@ -47,19 +47,19 @@ router.post(
                 email: req.body.email,
                 password: secPass,
             });
-            objData = {
+            payload = {
                 user: {
                     id: user.id
                 }
             }
-            const authToken = jwt.sign({objData, JWT_SECRET_URI})
+            const authToken = jwt.sign(payload, JWT_SECRET_URI);
 
             // Send the created user as a response
             res.json({authToken});
             } catch (error) {
             // Log the error message and send a 500 status code
             console.error(error.message);
-            res.status(500).send('Some error occurred', error.message);
+            res.status(500).send(`Some error occurred, ${error.message}`);
             }
         }
 );
