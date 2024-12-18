@@ -14,7 +14,7 @@ const NotesSchema = new Schema({
         type: String, 
        },
     
-    timestamp: {
+    date: {
         type: Date,
         default: Date.now
     }

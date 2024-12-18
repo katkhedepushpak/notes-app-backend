@@ -3,8 +3,14 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    
-    console.log('Getting all the notes');
-});
+    obj = {
 
+        'name': 'Kat',
+        'age': 21
+    }
+    res.send('Hello world');
+    // res.json(obj);
+
+    console.log(req.body);
+});
 module.exports = router;
